@@ -20,16 +20,14 @@ define("F_BASEDIR",     realpath('../'));
  * --开启调试 develop
  * --开启生产 production
  */
-define("F_ERROR", 'develop');
- // 关闭错误报告 -
-error_reporting(0);
-
+// define("F_ERROR", 'develop');
+//  // 关闭错误报告 -
 
                 
-require F_BASEDIR.'/core/autoload.php';
+$app = require F_BASEDIR.'/core/autoload.php';
 //加载配置
 
-
+$app->run();
 
 
 
