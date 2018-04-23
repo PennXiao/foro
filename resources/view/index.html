@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="utf-8">
+	<title>飞蓬 - 技术栈</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+<body>
+	<!-- 固定顶部文件 -->
+	<div class="penn-style-header">
+	    <div class="pure-menu pure-menu-horizontal pure-menu-scrollable penn-style-header-menu">
+	        <a href="#" class="pure-menu-heading penn-style-header-title">飞蓬技术栈</a>
+	        <a href="#" class="penn-style-header-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+	    </div>
+	    <div class=" pure-menu pure-menu-horizontal pure-menu-scrollable penn-style-header-menu penn-style-header-bottom" id="tuckedMenu">
+	        <ul class="pure-menu-list">
+	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Ctrl + D</a></li>
+	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">PHP 开发</a></li>
+	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Python 栈</a></li>
+	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Linux  栈</a></li>
+	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Raspberry Pi</a></li>
+	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">开发模式</a></li>
+	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">程序开发与算法</a></li> 
+	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">程序开发与区块链</a></li> 
+	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">杂谈</a></li>
+	        </ul>
+	    </div>
+	</div>
+
+	<div class="pure-g">
+		<div class="pure-u-lg-3-4 pure-u-sm-1-1 b">
+			我是文章内容的显示和文章列表
+		</div>
+
+		<div class="pure-u-lg-1-4 pure-u-sm-1-1 b">
+			{{title}}我是标签内容热门推荐之类
+		</div>
+	</div>
+
+
+
+<!-- JS控制 -->
+<script>
+	(function (window, document) {
+		document.getElementById('toggle').addEventListener('click', function (e) {
+			document.getElementById('tuckedMenu').classList.toggle('show');
+		    document.getElementById('toggle').classList.toggle('open');
+		});
+	})(this, this.document);
+</script>
+</body>
+</html>

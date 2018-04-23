@@ -1,4 +1,4 @@
 <?php
 
-$route->addRoute('GET','/','HomeController@hello');
+$route->addRoute('GET','/','HomeController@index');
 $route->addRoute('GET','/index','HomeController@hello');

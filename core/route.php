@@ -6,8 +6,8 @@
  * @var [type]
  */
 $dispatcher = FastRoute\simpleDispatcher( function(FastRoute\RouteCollector $route) {
-    // $r->addRoute('GET','/','HomeController@hello');
-    // $r->addRoute('GET','/index','HomeController@hello');
+    // $r->addRoute('GET','/','handler');
+    // $r->addRoute('GET','/index','handler');
     // These two calls
     // $r->addRoute('GET', '/test', 'handler');
     // $r->addRoute('POST', '/test', 'handler');

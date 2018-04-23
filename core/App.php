@@ -1,14 +1,16 @@
 <?php
 class App{
-
-
+	/**
+	 * 加载配置
+	 * @param  [str] $key [获取配置数组$key的值]
+	 * @return [arr]      [返回加载的配置内容]
+	 */
 	public static function config($key = null){
 		require_once F_BASEDIR.'/config/app.php';
-		// var_dump($config);
 		return $key!=null?(isset($config[$key])?$config[$key]:null):$config;
 	}
 	/**
-	 * 加载视图定义到类
+	 * 加载路由
 	 * @param  [object] $request [过滤后的request object]
 	 * @return [int]  0
 	 */
