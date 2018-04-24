@@ -23,11 +23,12 @@ class Controller{
 		return $key!=null?(!isset($_GET[$key])?!isset($_POST[$key])?NULL:$_POST[$key]:$_GET[$key]):$_GET+$_POST;
 	}
 
-	public function view($file='',$arr=[]){
+	public function view($file='',$arr=[],$option=[]){
 		$loader = new \Twig_Loader_Filesystem(F_BASEDIR.'/resources/view');
-		$twig = new \Twig_Environment($loader, array(
-		    'cache' => F_BASEDIR.'/temp/template/compilation_cache',
-		));
+		if (\App::config('debug') != true) {
+			$option = ['cache' => F_BASEDIR.'/temp/template/compilation_cache',];
+		}
+		$twig = new \Twig_Environment($loader,$option);
 		echo $twig->render($file,$arr);
 	}
 

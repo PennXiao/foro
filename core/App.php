@@ -6,7 +6,7 @@ class App{
 	 * @return [arr]      [返回加载的配置内容]
 	 */
 	public static function config($key = null){
-		require_once F_BASEDIR.'/config/app.php';
+		require F_BASEDIR.'/config/app.php';
 		return $key!=null?(isset($config[$key])?$config[$key]:null):$config;
 	}
 	/**

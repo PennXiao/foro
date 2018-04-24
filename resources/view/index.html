@@ -1,55 +1,115 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
-	<meta charset="utf-8">
-	<title>飞蓬 - 技术栈</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css">
-	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
-</head>
-<body>
-	<!-- 固定顶部文件 -->
-	<div class="penn-style-header">
-	    <div class="pure-menu pure-menu-horizontal pure-menu-scrollable penn-style-header-menu">
-	        <a href="#" class="pure-menu-heading penn-style-header-title">飞蓬技术栈</a>
-	        <a href="#" class="penn-style-header-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
-	    </div>
-	    <div class=" pure-menu pure-menu-horizontal pure-menu-scrollable penn-style-header-menu penn-style-header-bottom" id="tuckedMenu">
-	        <ul class="pure-menu-list">
-	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Ctrl + D</a></li>
-	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">PHP 开发</a></li>
-	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Python 栈</a></li>
-	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Linux  栈</a></li>
-	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Raspberry Pi</a></li>
-	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">开发模式</a></li>
-	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">程序开发与算法</a></li> 
-	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">程序开发与区块链</a></li> 
-	            <li class="pure-menu-item"><a href="#" class="pure-menu-link">杂谈</a></li>
-	        </ul>
-	    </div>
-	</div>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>飞蓬技术栈</title>
 
-	<div class="pure-g">
-		<div class="pure-u-lg-3-4 pure-u-sm-1-1 b">
-			我是文章内容的显示和文章列表
-		</div>
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-		<div class="pure-u-lg-1-4 pure-u-sm-1-1 b">
-			{{title}}我是标签内容热门推荐之类
-		</div>
-	</div>
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="main.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">飞蓬技术栈</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">飞蓬技术栈</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <!-- <li class="pure-menu-item"><a href="#" class="pure-menu-link">Ctrl + D</a></li> -->
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">PHP 开发</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Python 栈</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Linux  栈</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Raspberry Pi</a></li>
+            <!-- <li class="pure-menu-item"><a href="#" class="pure-menu-link">开发模式</a></li> -->
+            <!-- <li class="pure-menu-item"><a href="#" class="pure-menu-link">程序开发与算法</a></li>  -->
+            <!-- <li class="pure-menu-item"><a href="#" class="pure-menu-link">程序开发与区块链</a></li>  -->
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">杂谈</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Begin page content -->
+    <div class="container">
+
+        <div class="col-sm-8">
 
 
 
-<!-- JS控制 -->
-<script>
-	(function (window, document) {
-		document.getElementById('toggle').addEventListener('click', function (e) {
-			document.getElementById('tuckedMenu').classList.toggle('show');
-		    document.getElementById('toggle').classList.toggle('open');
-		});
-	})(this, this.document);
-</script>
-</body>
+          <div class="blog-post">
+            <h3 class="blog-post-title">树莓派继电器模块</h3>
+            <p class="blog-post-meta">10-23, 2018 by <a href="#">admin</a></p>
+
+<!--             <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p> -->
+            <blockquote>
+              <p>GPIO 图解 <strong>Nullam quis risus eget urna mollis</strong> Python-Raspberry-Gpio</p>
+            </blockquote>
+            <p> 关于树莓派IO网上有一大推资料。现在本文将资料进行汇总整理。主要是常用操作，和io详情等等内容。和自己的一些分析想法。减少用户索引资料浪费的时间。啊哈哈哈哈哈</p>
+          </div>
+
+
+
+          <nav>
+            <ul class="pager">
+              <li><a href="#">上页</a></li>
+              <li><a href="#">下页</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>标签</h4>
+          </div>
+
+          <div class="sidebar-module">
+            <h4>历史</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">时间线</a></li>
+            </ol>
+          </div>
+
+          <div class="sidebar-module">
+            <h4>关注</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">© 2018 Company, Inc.</p>
+      </div>
+    </footer>
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
 </html>

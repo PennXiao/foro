@@ -29,6 +29,9 @@ class __TwigTemplate_c48d44acfe9bf655c17424ae88157c5d7b6fcf949f4ba8163075ade825b
 \t<link rel=\"stylesheet\" href=\"https://unpkg.com/purecss@0.6.1/build/pure-min.css\">
 \t<link rel=\"stylesheet\" href=\"https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css\">
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/main.css\">
+
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"https://purecss.io/combo/1.18.13?/css/layouts/blog.css\">
+\t
 </head>
 <body>
 \t<!-- 固定顶部文件 -->
@@ -54,12 +57,39 @@ class __TwigTemplate_c48d44acfe9bf655c17424ae88157c5d7b6fcf949f4ba8163075ade825b
 
 \t<div class=\"pure-g\">
 \t\t<div class=\"pure-u-lg-3-4 pure-u-sm-1-1 b\">
-\t\t\t我是文章内容的显示和文章列表
+\t\t\t<div class=\"pure-u-sm-1-1\">文章标题，与文章索引简介\t</div>
+\t\t\t<div class=\"pure-u-sm-1-1\">文章标题，与文章索引简介\t</div>
+\t\t\t<div class=\"pure-u-sm-1-1\">文章标题，与文章索引简介\t</div>
+\t\t\t<div class=\"pure-u-sm-1-1\">文章标题，与文章索引简介\t</div>
+
+\t\t\t<div class=\"posts\">
+\t\t\t    <!-- <h1 class=\"content-subhead\">Pinned Post</h1> -->
+\t\t\t    <section class=\"post\">
+\t\t\t        <header class=\"post-header\" id=\"yui_3_18_1_1_1524468944266_10\">
+\t\t\t            <img width=\"48\" height=\"48\"  class=\"post-avatar\" src=\"/img/common/tilo-avatar.png\">
+
+\t\t\t            <h2 class=\"post-title\">树莓派继电器模块</h2>
+
+\t\t\t            <p class=\"post-meta\">
+\t\t\t                By <a href=\"#\" class=\"post-author\">树莓派IO</a>继电器电路<a class=\"post-category post-category-design\" href=\"#\">只能家居</a> <a class=\"post-category post-category-pure\" href=\"#\">Python</a>
+\t\t\t            </p>
+\t\t\t        </header>
+
+\t\t\t        <div class=\"post-description\">
+\t\t\t            <p>
+\t\t\t                Yesterday at CSSConf, we launched Pure – a new CSS library. Phew! Here are the <a href=\"https://speakerdeck.com/tilomitra/pure-bliss\">slides from the presentation</a>. Although it looks pretty minimalist, we’ve been working on Pure for several months. After many iterations, we have released Pure as a set of small, responsive, CSS modules that you can use in every web project.
+\t\t\t            </p>
+\t\t\t        </div>
+\t\t\t    </section>
+\t\t\t</div>
+
+
+
 \t\t</div>
 
 \t\t<div class=\"pure-u-lg-1-4 pure-u-sm-1-1 b\">
 \t\t\t";
-        // line 39
+        // line 69
         echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
         echo "我是标签内容热门推荐之类
 \t\t</div>
@@ -92,7 +122,7 @@ class __TwigTemplate_c48d44acfe9bf655c17424ae88157c5d7b6fcf949f4ba8163075ade825b
 
     public function getDebugInfo()
     {
-        return array (  63 => 39,  23 => 1,);
+        return array (  93 => 69,  23 => 1,);
     }
 
     public function getSourceContext()
