@@ -63,7 +63,7 @@ code {
 .sidebar-module-inset ol:last-child {
   margin-bottom: 0;
 }
-
+.sidebar-module-inset span{line-height: 25px;}
 
 /* Pagination */
 .pager {

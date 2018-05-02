@@ -19,6 +19,7 @@ class Controller{
 			$this->db = &$capsule;
 		}
 	}
+	
 	public function request($key=NULL){
 		return $key!=null?(!isset($_GET[$key])?!isset($_POST[$key])?NULL:$_POST[$key]:$_GET[$key]):$_GET+$_POST;
 	}
