@@ -20,6 +20,21 @@
       </blockquote>
       <p> 关于树莓派IO网上有一大推资料。现在本文将资料进行汇总整理。主要是常用操作，和io详情等等内容。和自己的一些分析想法。减少用户索引资料浪费的时间。啊哈哈哈哈哈</p>
     </div>
+    {%for data in list %}
+    <div class="blog-post">
+      <h3 class="blog-post-title">{{list.title}}</h3>
+      <p class="blog-post-meta">{{list.created_ct}} <a href="#">admin</a></p>
+      <blockquote>
+        <p>GPIO 图解 <strong>Nullam quis risus eget urna mollis</strong> Python-Raspberry-Gpio</p>
+      </blockquote>
+      <p> {{list.info}}</p>
+    </div>
+    {%else%}
+    没有内容.....
+    {%endfor%}
+
+
+
 
     <nav>
       <ul class="pager">

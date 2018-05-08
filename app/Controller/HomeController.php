@@ -7,9 +7,9 @@ namespace Acme\Controller;
 
 class HomeController extends Controller{
 	public function index(){
-		// $this->db();
-		// $res = $this->db::table('users')->find(1);
-		$this->view('index.html',['title'=>$res=222]);
+		// 获取热门前十的文章
+		$res = $this->db::table('content')->all();
+		$this->view('index.html',['data'=>$res]);
 	}
 
 	public function content($cid){
