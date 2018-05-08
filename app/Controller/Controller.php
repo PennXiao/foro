@@ -3,8 +3,8 @@ namespace Acme\Controller;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 class Controller{
-	private	$view = '';
-	private $db = NULL;
+	protected $view = '';
+	protected $db = NULL;
 	private $request = '';
 	function __construct() {
 	}
@@ -16,6 +16,10 @@ class Controller{
 			$capsule = new Capsule;
 			$config = $config?$config:\App::config('db');
 			$capsule->addConnection($config);
+			// 使用设置静态变量方法，令当前的 Capsule 实例全局可用
+			$capsule->setAsGlobal();
+			// 启动 Eloquent ORM
+			$capsule->bootEloquent();
 			$this->db = &$capsule;
 		}
 	}
