@@ -7,6 +7,9 @@ class Controller{
 	protected $db = NULL;
 	private $request = '';
 	function __construct() {
+		if (!$this->db) {
+			$this->db();# code...
+		}
 	}
 
 	public function db($config = NULL){
@@ -33,6 +36,11 @@ class Controller{
 		if (\App::config('debug') != true) {
 			$option = ['cache' => F_BASEDIR.'/temp/template/compilation_cache',];
 		}
+
+		//此处获取菜单栏
+		$example = $this->db::table('sort')->get();
+		$arr['example'] = $example;
+		// $twig->addGlobal('text', new Text());全局变量
 		$twig = new \Twig_Environment($loader,$option);
 		echo $twig->render($file,$arr);
 	}

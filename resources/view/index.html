@@ -8,7 +8,7 @@
     </style>
 {% endblock %}
 {% block content %}
-    <h1>Index</h1>
+<!--     <h1>Index</h1>
     <p class="important">
         Welcome to my awesome homepage.
     </p>
@@ -20,7 +20,7 @@
       </blockquote>
       <p> 关于树莓派IO网上有一大推资料。现在本文将资料进行汇总整理。主要是常用操作，和io详情等等内容。和自己的一些分析想法。减少用户索引资料浪费的时间。啊哈哈哈哈哈
       </p>
-    </div>
+    </div> -->
 
 
     {%for list in data %}
@@ -28,11 +28,11 @@
     <p class="important">
         Welcome to my awesome homepage.
     </p>
-    <div class="blog-post">
+    <div class="blog-post" onclick="window.href='../blong?t={{list.short_url}}'">
       <h3 class="blog-post-title">{{list.title}}</h3>
       <p class="blog-post-meta">{{list.created_at}} <a href="#">admin</a></p>
       <blockquote>
-        <p>GPIO 图解 <strong>Nullam quis risus eget urna mollis</strong> Python-Raspberry-Gpio</p>
+        <p> 图解 <strong>Nullam quis risus eget urna mollis</strong> Python-Raspberry-Gpio</p>
       </blockquote>
       <p> {{list.info}}</p>
     </div>
