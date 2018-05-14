@@ -28,6 +28,14 @@ class HomeController extends Controller{
 
 		$this->view('admin/edit',['data' => $res]);
 	}
+	/**
+	 * 保存新增的文章
+	 */
+	public function editPost(){
+		$data = [];
+		$data['title'] = $this->request('title');
+		
+	}
 
 
 }

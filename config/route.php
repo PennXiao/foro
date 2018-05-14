@@ -8,5 +8,6 @@ $route->addRoute('GET','/blong','HomeController@blong');
 
 // Admin 文章新增编辑
 $route->addRoute('GET','/edit','HomeController@edit');
+$route->addRoute('POST','/edit','HomeController@editPost');
 
 
