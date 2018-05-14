@@ -20,5 +20,12 @@ class App{
 		require F_BASEDIR.'/config/app.php';
 		return $key!=null?(isset($config[$key])?$config[$key]:null):$config;
 	}
-	
+	/**
+	 * 加载数据库配置
+	 * @param [type] $key [description]
+	 */
+	public static function DBconfig($key = null){
+		require_once F_BASEDIR.'/config/database.php';
+		return $key!=null?(isset($config[$key])?$config[$key]:null):$config;
+	}
 }

@@ -17,7 +17,7 @@ class Controller{
 			return $this->db;
 		}else{
 			$capsule = new Capsule;
-			$config = $config?$config:\App::config('db');
+			$config = $config?$config:\App::DBconfig('db');
 			$capsule->addConnection($config);
 			// 使用设置静态变量方法，令当前的 Capsule 实例全局可用
 			$capsule->setAsGlobal();
