@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>新增文章</title>
+        <link rel="stylesheet" href="http://pandao.github.io/editor.md/css/editormd.css" /> 
+    </head>
+    <body>
+        <div id="layout">
+            <header>
+                <h1>新增博文</h1>  
+            </header>
+            <form method="post" action="./">
+                <input type="text" name="type" value="选择文章所属类目">
+                <input type="text" name="title">
+                <div id="test-editormd">
+                    <textarea style="display:none;" name="mdcontent">
+                    </textarea>
+                </div>
+                <div style="width:90%;margin: 10px auto;">
+                    <input type="hidden" name="test-editormd-html-code" value="">
+                    <input type="submit" name="submit" value="提交表单 Submit" style="padding: 5px;" /> 
+                </div> 
+
+
+            </form>
+        </div>        
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://pandao.github.io/editor.md/editormd.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $.get("http://pandao.github.io/editor.md/examples/test.md", function(md) {
+                    var testEditor = editormd("test-editormd", {
+                        width  : "90%",
+                        height : 640,
+                        path   : "http://pandao.github.io/editor.md/lib/",
+                        appendMarkdown : md,
+                        saveHTMLToTextarea : true
+                    });
+                });
+
+                //testEditor.getMarkdown();       // 获取 Markdown 源码
+                //testEditor.getHTML();           // 获取 Textarea 保存的 HTML 源码
+                //testEditor.getPreviewedHTML();  // 获取预览窗口里的 HTML，在开启 watch 且没有开启 saveHTMLToTextarea 时使用
+            });
+        </script>
+    </body>
+</html>

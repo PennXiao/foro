@@ -42,7 +42,7 @@ class Controller{
 		$arr['example'] = $example;
 		// $twig->addGlobal('text', new Text());全局变量
 		$twig = new \Twig_Environment($loader,$option);
-		echo $twig->render($file,$arr);
+		echo $twig->render($file.'.html',$arr);
 	}
 
 	function __destruct() {

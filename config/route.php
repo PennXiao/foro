@@ -7,6 +7,6 @@ $route->addRoute('GET','/example/{dir}','HomeController@example');
 $route->addRoute('GET','/blong','HomeController@blong');
 
 // Admin 文章新增编辑
-$route->addRoute('GET','/edit','HomeController@blong');
+$route->addRoute('GET','/edit','HomeController@edit');
 
 
