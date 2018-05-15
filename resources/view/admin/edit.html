@@ -21,12 +21,13 @@
     <form method="post">
       <div class="form-group">
         <label>网站类目</label>
-        <select class="form-control" name="typeId">
+        <select class="form-control" name="sort">
           <option>杂项</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+          <option value="1" >1</option>
+          <option value="2" >2</option>
+          <option value="3" >3</option>
+          <option value="4" >4</option>
+          <option value="5" >5</option>
         </select>
 
       </div>
@@ -40,7 +41,7 @@
     <div class="form-group">
       <label for="exampleInputPassword1">Markdown Edit</label>
       <div id="test-editormd">
-          <textarea style="display:none;" name="mdcontent">
+          <textarea style="display:none;">
           </textarea>
       </div>
     </div>
@@ -73,9 +74,13 @@
     });
             // 在这里给表单赋值
         function submitForm(){
-            var con = $("textarea[name='mdcontent']").val()
+            var con = $("textarea[name='test-editormd-markdown-doc']").val()
+            // var infoC = $("textarea[name='test-editormd-html-code']").val()
             var info = con.substr(0,150)
-            console.log(info)
+            $("input[name='content']").val(con);
+            $("input[name='info']").val(info);
+            // console.log(info)
+            $("form").submit();
         }
 </script>
     </body>

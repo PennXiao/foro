@@ -5,6 +5,7 @@
  * @var [type]
  */
 $loader = require F_BASEDIR.'/vendor/autoload.php';
+require F_BASEDIR.'/core/helper.php';
 //新增psr4目录组
 $loader->addPsr4('Acme\\', F_BASEDIR.'/app/');
 $loader->addClassMap(['App' => F_BASEDIR.'/core/App.php']);

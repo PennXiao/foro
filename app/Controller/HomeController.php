@@ -34,7 +34,15 @@ class HomeController extends Controller{
 	public function editPost(){
 		$data = [];
 		$data['title'] = $this->request('title');
-		
+		// $data['info'] = $this->request('info');
+		$data['md_text'] = $this->request('content');
+		$data['sort'] = $this->request('sort');
+		$data['short_url'] = 'VYEdit';
+		$id = $this->db::table('content')->insertGetId($data);
+		$this->db::table('content')
+            ->where('id', $id)
+            ->update(['short_url' => shortUrl($id)]);
+        header("location:/");
 	}
 
 
