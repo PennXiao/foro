@@ -34,14 +34,14 @@ class Controller{
 	public function view($file='',$arr=[],$option=[]){
 		$loader = new \Twig_Loader_Filesystem(F_BASEDIR.'/resources/view');
 		if (\App::config('debug') != true) {
-			$option = ['cache' => F_BASEDIR.'/temp/template/compilation_cache',];
+			$option = ['cache' => F_BASEDIR.'/resources/template/compilation_cache',];
 		}
 
+		$twig = new \Twig_Environment($loader,$option);
 		//此处获取菜单栏
 		$example = $this->db::table('sort')->get();
 		$arr['example'] = $example;
-		// $twig->addGlobal('text', new Text());全局变量
-		$twig = new \Twig_Environment($loader,$option);
+		// $twig->addGlobal('example', $example);全局变量
 		echo $twig->render($file.'.html',$arr);
 	}
 

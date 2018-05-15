@@ -18,13 +18,11 @@
 <div class="container">
   <div class="row">
 
-
-
     <form method="post">
       <div class="form-group">
-        <label for="exampleInputEmail1">网站类目</label>
-        <select class="form-control">
-          <option>网站目录</option>
+        <label>网站类目</label>
+        <select class="form-control" name="typeId">
+          <option>杂项</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
@@ -33,47 +31,52 @@
 
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">文章标题</label>
-        <input type="text" class="form-control" placeholder="Password">
+        <label>文章标题</label>
+        <input type="text" class="form-control" name="title" placeholder="响亮的标题">
       </div>
-      <div class="form-group">
-            <div id="test-editormd">
-                <textarea style="display:none;" name="mdcontent">
-                </textarea>
-            </div>
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <input type="hidden" name="info" value="">
+      <input type="hidden" name="content" value="">
     </form>
-
+    <div class="form-group">
+      <label for="exampleInputPassword1">Markdown Edit</label>
+      <div id="test-editormd">
+          <textarea style="display:none;" name="mdcontent">
+          </textarea>
+      </div>
+    </div>
+    <button type="input" class="btn btn-default" onclick="submitForm()">Submit</button>
 
 
   </div>
 </div>
+
 <br>
 <br>
 
-
-
-
-   
-        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-        <script src="http://pandao.github.io/editor.md/editormd.js"></script>
-        <script type="text/javascript">
-            $(function() {
-                $.get("http://pandao.github.io/editor.md/examples/test.md", function(md) {
-                    var testEditor = editormd("test-editormd", {
-                        width  : "90%",
-                        height : 640,
-                        path   : "http://pandao.github.io/editor.md/lib/",
-                        appendMarkdown : md,
-                        saveHTMLToTextarea : true
-                    });
-                });
-
-                //testEditor.getMarkdown();       // 获取 Markdown 源码
-                //testEditor.getHTML();           // 获取 Textarea 保存的 HTML 源码
-                //testEditor.getPreviewedHTML();  // 获取预览窗口里的 HTML，在开启 watch 且没有开启 saveHTMLToTextarea 时使用
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://pandao.github.io/editor.md/editormd.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $.get("http://pandao.github.io/editor.md/examples/test.md", function(md) {
+            var testEditor = editormd("test-editormd", {
+                width  : "90%",
+                height : 640,
+                path   : "http://pandao.github.io/editor.md/lib/",
+                appendMarkdown : md,
+                saveHTMLToTextarea : true
             });
-        </script>
+        });
+
+        //testEditor.getMarkdown();       // 获取 Markdown 源码
+        //testEditor.getHTML();           // 获取 Textarea 保存的 HTML 源码
+        //testEditor.getPreviewedHTML();  // 获取预览窗口里的 HTML，在开启 watch 且没有开启 saveHTMLToTextarea 时使用
+    });
+            // 在这里给表单赋值
+        function submitForm(){
+            var con = $("textarea[name='mdcontent']").val()
+            var info = con.substr(0,150)
+            console.log(info)
+        }
+</script>
     </body>
 </html>
