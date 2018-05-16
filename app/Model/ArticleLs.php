@@ -6,9 +6,8 @@ namespace Acme\Model;
 */
 class MenuTop extends Model
 {
-	//表明
-	protected $table = 'menu_top';
-	
+	protected $table = 'article_list';
+
 	//关闭orm自动维护时间戳
 	// public $timestamps = false;
 	
@@ -19,15 +18,11 @@ class MenuTop extends Model
 
 	private $COLUMNS  = [
 		'id',
-		'name',
-		'order',
+		'title',
+		'textarea',
+		'mark_group',
 		'created_at',
 		'updated_at',
 		'deleted_at',
 	];
-	
-	
 }
-
-
-
