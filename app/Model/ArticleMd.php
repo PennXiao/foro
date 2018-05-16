@@ -4,7 +4,7 @@ namespace Acme\Model;
 /**
 * 顶部菜单栏
 */
-class MenuTop extends Model
+class ArticleMd extends Model
 {
 	protected $table = 'article_markdown';
 
@@ -19,7 +19,8 @@ class MenuTop extends Model
 	private $COLUMNS  = [
 		'id',
 		'markdown',
-		'showcount',
+		'short_url',
+		'show_count',
 		'created_at',
 		'updated_at',
 		'deleted_at',

@@ -4,7 +4,7 @@ namespace Acme\Model;
 /**
 * 顶部菜单栏
 */
-class MenuTop extends Model
+class ArticleLs extends Model
 {
 	protected $table = 'article_list';
 
@@ -21,6 +21,9 @@ class MenuTop extends Model
 		'title',
 		'textarea',
 		'mark_group',
+		'article_url',
+		'menutop_type',
+		'article_type',
 		'created_at',
 		'updated_at',
 		'deleted_at',
