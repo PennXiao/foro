@@ -21,7 +21,7 @@
     <form method="post">
       <div class="form-group">
         <label>网站类目</label>
-        <select class="form-control" name="sort">
+        <select class="form-control" name="menutop_id">
           <option>杂项</option>
           <option value="1" >1</option>
           <option value="2" >2</option>
@@ -35,8 +35,9 @@
         <label>文章标题</label>
         <input type="text" class="form-control" name="title" placeholder="响亮的标题">
       </div>
-      <input type="hidden" name="info" value="">
-      <input type="hidden" name="content" value="">
+      <input type="hidden" name="textarea" value="">
+      <input type="hidden" name="markdown_doc" value="">
+      <input type="hidden" name="markdown_htm" value="">
     </form>
     <div class="form-group">
       <label for="exampleInputPassword1">Markdown Edit</label>
@@ -76,9 +77,7 @@
         function submitForm(){
             var con = $("textarea[name='test-editormd-markdown-doc']").val()
             // var infoC = $("textarea[name='test-editormd-html-code']").val()
-            var info = con.substr(0,150)
-            $("input[name='content']").val(con);
-            $("input[name='info']").val(info);
+            $("input[name='markdown_doc']").val(con);
             // console.log(info)
             $("form").submit();
         }

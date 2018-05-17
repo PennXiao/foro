@@ -1,6 +1,5 @@
 <?php
-namespace Acme\Controller;
-
+namespace Acme\Controller; 
 class HomeController extends Controller{
 
 	public function index(){
@@ -24,8 +23,6 @@ class HomeController extends Controller{
 	public function edit($t='')
 	{
 		$res = [];
-
-
 		$this->view('admin/edit',['data' => $res]);
 	}
 	/**
@@ -33,15 +30,12 @@ class HomeController extends Controller{
 	 */
 	public function editPost(){
 		$data = [];
-		$data['title'] = $this->request('title');
-		// $data['info'] = $this->request('info');
-		$data['md_text'] = $this->request('content');
-		$data['sort'] = $this->request('sort');
-		$data['short_url'] = 'VYEdit';
-		$id = $this->db::table('content')->insertGetId($data);
-		$this->db::table('content')
-            ->where('id', $id)
-            ->update(['short_url' => shortUrl($id)]);
+		$data['title'] 			=	 $this->request('title');
+		$data['textarea'] 		=	 $this->request('textarea');
+		$data['menutop_id'] 	=	 $this->request('menutop_id');
+		$data['markdown_doc']	=	 $this->request('markdown_doc');
+		$data['markdown_htm']	=	 $this->request('markdown_htm');
+		\Acme\Model\ArticleMd::inCreate($data);
         header("location:/");
 	}
 

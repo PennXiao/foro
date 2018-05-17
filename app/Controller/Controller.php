@@ -39,7 +39,7 @@ class Controller{
 
 		$twig = new \Twig_Environment($loader,$option);
 		//此处获取菜单栏
-		$example = $this->db::table('sort')->get();
+		$example = $this->db::table('menu_top')->get();
 		$arr['example'] = $example;
 		// $twig->addGlobal('example', $example);全局变量
 		echo $twig->render($file.'.html',$arr);
