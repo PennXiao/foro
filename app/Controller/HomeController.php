@@ -21,7 +21,10 @@ class HomeController extends Controller{
 	}
 
 	public function edit($t='')
-	{
+	{	
+		if ($this->request('name')&&$this->request('url')&&$this->request('order')) {
+			\Acme\Model\MenuTop::inCreate($request);
+		}
 		$res = [];
 		$this->view('admin/edit',['data' => $res]);
 	}

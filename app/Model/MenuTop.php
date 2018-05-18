@@ -17,6 +17,21 @@ class MenuTop extends Model
 	//批量赋值黑名单
 	protected $guarded = [];
 
+	/**
+	 * 新增菜单
+	 * @param  array  $data insert原数据
+	 * @return [type]       [description]
+	 */
+	public static function inCreate($data=[]){
+		$me['name']		= $data['name'];
+		$me['url']		= $data['url'];
+		$me['order']		= $data['order'];
+		return self::create($mk);
+	}
+
+
+
+
 private $COLUMNS  = <<<END
 CREATE TABLE IF NOT EXISTS `pennfly`.`menu_top` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
