@@ -21,6 +21,7 @@ private $COLUMNS  = <<<END
 CREATE TABLE IF NOT EXISTS `pennfly`.`menu_top` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL COMMENT '名称',
+  `url` VARCHAR(45) NOT NULL COMMENT '链接',
   `order` TINYINT NOT NULL DEFAULT 0 COMMENT '排序',
   `updated_at` TIMESTAMP NULL,
   `created_at` TIMESTAMP NULL,

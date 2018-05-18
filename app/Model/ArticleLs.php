@@ -15,7 +15,11 @@ class ArticleLs extends Model
 	protected $fillable = [];
 	//批量赋值黑名单
 	protected $guarded = [];
-
+	/**
+	 * 插入新的文章
+	 * @param  array  $data [description]
+	 * @return [type]       [description]
+	 */
 	public static function inCreate($data = []){
 		$ls['title']		=	$data['title'];
 		$ls['textarea']		=	$data['textarea'];
@@ -26,6 +30,12 @@ class ArticleLs extends Model
 		$oneLs->save();
 		return $url;
 	}
+	//获取首页前十推荐文章
+	public static function getIndex($limit=10){
+		return self::get();
+	}
+
+
 
 
 private $COLUMNS  = <<<END

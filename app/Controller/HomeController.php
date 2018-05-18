@@ -4,7 +4,7 @@ class HomeController extends Controller{
 
 	public function index(){
 		// 获取热门前十的文章
-		$res = $this->db::table('content')->get();
+		$res = \Acme\Model\ArticleLs::getIndex(10);
 		$this->view('index',['data'=>$res->toarray()]);
 	}
 
