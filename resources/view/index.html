@@ -24,17 +24,17 @@
 
 
     {%for list in data %}
-    <h1>Index</h1>
+<!--     <h1>Index</h1>
     <p class="important">
         Welcome to my awesome homepage.
-    </p>
+    </p> -->
     <div class="blog-post" onclick="window.href='../blong?t={{list.short_url}}'">
       <h3 class="blog-post-title">{{list.title}}</h3>
       <p class="blog-post-meta">{{list.created_at}} <a href="#">admin</a></p>
       <blockquote>
-        <p> 图解 <strong>Nullam quis risus eget urna mollis</strong> Python-Raspberry-Gpio</p>
+        <p>{{list.textarea}}</p>
       </blockquote>
-      <p> {{list.info}}</p>
+      <!-- <p> {{list.info}}</p> -->
     </div>
     {%else%}
     没有内容.....

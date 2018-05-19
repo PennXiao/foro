@@ -10,7 +10,8 @@ class HomeController extends Controller{
 
 	public function example($dir)
 	{
-		$res = $this->db::table('content')->get($id);
+		var_dump($dir);die;
+	
 		$this->view('content',['data' => $res]);
 	}
 
@@ -23,7 +24,7 @@ class HomeController extends Controller{
 	public function edit($t='')
 	{	
 		if ($this->request('name')&&$this->request('url')&&$this->request('order')) {
-			\Acme\Model\MenuTop::inCreate($request);
+			\Acme\Model\MenuTop::inCreate($this->request());
 		}
 		$res = [];
 		$this->view('admin/edit',['data' => $res]);

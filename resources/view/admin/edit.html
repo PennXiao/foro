@@ -2,7 +2,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>新增文章</title>
+        <title>新增博文</title>
         <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <!--[if lt IE 9]>
           <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -20,7 +20,7 @@
 
     <form method="post">
       <div class="form-group">
-        <label>网站类目</label>
+        <label>博文类目</label>
         <select class="form-control" name="menutop_id">
             <option value="0">杂项</option>
             {%for list in example %}
@@ -43,13 +43,13 @@
       <input type="hidden" name="markdown_htm" value="">
     </form>
     <div class="form-group">
-      <label for="exampleInputPassword1">文章编辑器</label>
+      <label for="exampleInputPassword1">MD编辑器</label>
       <div id="test-editormd">
           <textarea style="display:none;">
           </textarea>
       </div>
     </div>
-    <button type="input" class="btn btn-default" onclick="submitForm()">Submit</button>
+    <button type="input"  class="btn btn-default" id="submit">Submit</button>
   </div>
 </div>
 
@@ -60,29 +60,28 @@
 <script src="http://pandao.github.io/editor.md/editormd.js"></script>
 <script type="text/javascript">
     $(function() {
-        $.get("http://pandao.github.io/editor.md/examples/test.md", function(md) {
+            var md = '请开始你的上台表演-';
             var testEditor = editormd("test-editormd", {
-                width  : "90%",
+                width  : "100%",
                 height : 640,
                 path   : "http://pandao.github.io/editor.md/lib/",
                 appendMarkdown : md,
-                saveHTMLToTextarea : true
+                saveHTMLToTextarea : true,
+                emoji : true,
+                taskList : true,
+                tocm            : true,         // Using [TOCM]
+                tex : true,                   // 开启科学公式TeX语言支持，默认关闭
+                flowChart : true,             // 开启流程图支持，默认关闭
+                sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
             });
-        });
-
-        //testEditor.getMarkdown();       // 获取 Markdown 源码
-        //testEditor.getHTML();           // 获取 Textarea 保存的 HTML 源码
-        //testEditor.getPreviewedHTML();  // 获取预览窗口里的 HTML，在开启 watch 且没有开启 saveHTMLToTextarea 时使用
+            $("#submit").click(function(){
+                $(this).attr('disabled',true);
+                $("input[name='markdown_doc']").val(testEditor.getMarkdown());
+                $("input[name='markdown_htm']").val(testEditor.getHTML());
+                // $("form").submit();
+            })
     });
-            // 在这里给表单赋值
-        function submitForm(){
-            var con = $("textarea[name='test-editormd-markdown-doc']").val()
-            var info = $("textarea[name='test-editormd-html-code']").val()
-            $("input[name='markdown_doc']").val(con);
-            $("input[name='markdown_htm']").val(info);
-            // console.log(info)
-            $("form").submit();
-        }
+
 </script>
     </body>
 </html>

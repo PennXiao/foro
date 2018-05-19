@@ -26,7 +26,7 @@ class MenuTop extends Model
 		$me['name']		= $data['name'];
 		$me['url']		= $data['url'];
 		$me['order']		= $data['order'];
-		return self::create($mk);
+		return self::create($me);
 	}
 
 
