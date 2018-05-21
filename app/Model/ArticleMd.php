@@ -29,7 +29,14 @@ class ArticleMd extends Model
 		return self::create($mk);
 	}
 
-
+	/**
+	 * [根据段标签获取文章内容]
+	 * @param  [str] $t [短链接]
+	 * @return [arr]    [内容数组]
+	 */
+	public static function getByUrl($t){
+		return self::where('short_url',$t)->first();
+	}
 
 private $COLUMNS  = <<<END
 CREATE TABLE IF NOT EXISTS `pennfly`.`article_markdown` (

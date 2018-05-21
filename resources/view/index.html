@@ -1,6 +1,6 @@
 {% extends "./layout/main.html" %}
 
-{% block title %}Index{% endblock %}
+{% block title %} 热门{% endblock %}
 {% block head %}
     {{ parent() }}
     <style type="text/css">
@@ -28,8 +28,8 @@
     <p class="important">
         Welcome to my awesome homepage.
     </p> -->
-    <div class="blog-post" onclick="window.href='../blong?t={{list.short_url}}'">
-      <h3 class="blog-post-title">{{list.title}}</h3>
+    <div class="blog-post" onclick="window.href='">
+      <h3 class="blog-post-title"><a href="../blog?t={{list.short_url}}">{{list.title}}</a></h3>
       <p class="blog-post-meta">{{list.created_at}} <a href="#">admin</a></p>
       <blockquote>
         <p>{{list.textarea}}</p>

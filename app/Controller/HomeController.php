@@ -5,20 +5,21 @@ class HomeController extends Controller{
 	public function index(){
 		// 获取热门前十的文章
 		$res = \Acme\Model\ArticleLs::getIndex(10);
-		$this->view('index',['data'=>$res->toarray()]);
+		$this->view('index',['data'=>$res]);
 	}
 
 	public function example($dir)
 	{
-		var_dump($dir);die;
-	
-		$this->view('content',['data' => $res]);
+		$res = \Acme\Model\ArticleLs::getByDir($dir);
+		$this->view('index',['data'=>$res]);
 	}
 
-	public function blong($t)
+	public function blog($t='')
 	{
-		$res = $this->db::table('content')->get($id);
-		$this->view('content',['data' => $res]);
+		$t = $this->request('t');
+		$res = \Acme\Model\ArticleMd::getByUrl($t);
+		// var_dump($res);die;
+		$this->view('read_md',['data' => $res]);
 	}
 
 	public function edit($t='')

@@ -4,7 +4,7 @@ $route->addRoute('GET','/','HomeController@index');
 //热门分类
 $route->addRoute('GET','/example/{dir}','HomeController@example');
 //获取博客内容 /blong?t=Pv5I6ASbUaF
-$route->addRoute('GET','/blong','HomeController@blong');
+$route->addRoute('GET','/blog','HomeController@blog');
 
 // Admin 文章新增编辑
 $route->addRoute('GET','/edit','HomeController@edit');

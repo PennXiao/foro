@@ -15,6 +15,7 @@ class ArticleLs extends Model
 	protected $fillable = [];
 	//批量赋值黑名单
 	protected $guarded = [];
+
 	/**
 	 * 插入新的文章
 	 * @param  array  $data [description]
@@ -30,11 +31,16 @@ class ArticleLs extends Model
 		$oneLs->save();
 		return $url;
 	}
+
 	//获取首页前十推荐文章
 	public static function getIndex($limit=10){
 		return self::get();
 	}
-
+	//获取首页前十推荐文章
+	public static function getByDir($dir=NULL){
+		$menuId = MenuTop::where('url',$dir)->select('id')->first();
+		return self::where('menutop_id',$menuId->id)->get();
+	}
 
 
 
